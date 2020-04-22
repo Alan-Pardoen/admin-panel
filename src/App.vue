@@ -1,19 +1,36 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :msg="this.Test"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
 import HelloWorld from './components/HelloWorld.vue'
-
-export default {
+import store from './store/store.js'
+import { router } from './router.js'
+Vue.use(BootstrapVue)
+export default Vue.extend({
   name: 'App',
+  router: router,
   components: {
     HelloWorld
+  },
+  computed: {
+    Test ()
+    { 
+      console.log('store test ',this.$store.getters.Test )
+      return this.$store.getters.Test
+    }
+  },
+  beforeCreate () {
+  this.$store = store.getStore()
+  
   }
-}
+})
 </script>
 
 <style>
