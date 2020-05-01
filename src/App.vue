@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld :msg="this.Test"/>
+    <Navbar />
     <router-view></router-view>
   </div>
 </template>
@@ -9,15 +8,15 @@
 <script>
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
-import HelloWorld from './components/HelloWorld.vue'
 import store from './store/store.js'
 import { router } from './router.js'
+import Navbar from './components/Navbar'
 Vue.use(BootstrapVue)
 export default Vue.extend({
   name: 'App',
   router: router,
   components: {
-    HelloWorld
+    Navbar
   },
   computed: {
     Test ()
@@ -33,13 +32,23 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style lang="scss">
+@import '~bootstrap';
+@import '~bootstrap-vue';
+html,body{
+  height: 100vh;
+  width: 100vw;
+}
+.navbar{
+    padding: 0;
+    }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100%;
 }
 </style>
