@@ -26,7 +26,6 @@
                         <b-row>
                             <b-button></b-button>
                         </b-row>
-                        
                     </b-card-body>
                 </b-col>
             </b-row>
