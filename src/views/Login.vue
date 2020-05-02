@@ -24,7 +24,12 @@
                         </b-col>
                         </b-row>
                         <b-row>
-                            <b-button></b-button>
+                            <b-col cols="2">
+                            </b-col>
+                            <b-col cols="10">
+                                <b-button class="login-button"  v-if="LoginButtonActivation" >Login</b-button>
+                            <b-button class="login-button" v-else disabled >Login</b-button>
+                            </b-col>
                         </b-row>
                     </b-card-body>
                 </b-col>
@@ -37,8 +42,18 @@ export default {
     name : 'Login',
     data() {
       return {
-        name: ''
+        name: '',
+        password: null
       }
+    },
+    computed: {
+        LoginButtonActivation () {
+            if(this.password != undefined && this.name != undefined){
+                return true
+            }else{
+                return false
+            }
+        }
     }
 }
 </script>
@@ -58,6 +73,13 @@ export default {
             }
             .form-control{
                 margin-bottom: 1rem ;
+            }
+            .login-button{
+                width: 100%;
+                background-color: #17A2B8;
+            }
+            .login-button.disabled{
+                background-color: grey;
             }
         }
     }

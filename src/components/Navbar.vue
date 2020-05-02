@@ -1,14 +1,23 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand href="#">NavBar</b-navbar-brand>
+      <b-navbar-brand href="#" class="padding-remove"><img src="../assets/SUPTELECOM_CLAIR.png" style=" max-height: 40px;"/></b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item href="#" active>Link</b-nav-item>
-          <b-nav-item href="#" >Disabled</b-nav-item>
+          <b-nav-item v-on:click="HomeClick" active>Home</b-nav-item>
+          <template v-if="GetConnect">
+          <b-nav-item v-on:click="InfraViewClick" active>Infra View</b-nav-item>
+          <b-nav-item v-on:click="InfraCommandClick" active>Infra Command</b-nav-item>
+          <b-nav-item v-on:click="BlackListClick" active>Black List</b-nav-item>
+          </template>
+          <template v-else>
+          <b-nav-item >Infra View</b-nav-item>
+          <b-nav-item >Infra Command</b-nav-item>
+          <b-nav-item >Black List</b-nav-item>
+          </template>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -19,8 +28,9 @@
             <template v-slot:button-content>
               <em>User</em>
             </template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Disconection</b-dropdown-item>
+            <b-dropdown-item v-if="!GetConnect" v-on:click="LoginClick">Login</b-dropdown-item>
+            <b-dropdown-item v-if="GetConnect">Profile</b-dropdown-item>
+            <b-dropdown-item v-if="GetConnect">Disconection</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -29,9 +39,32 @@
 </template>
 <script>
 export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    computed:{
+        GetConnect () { return this.$store.getters.GetConnect }
+    },
+    methods:{
+      HomeClick(){
+        this.$router.push('/home')
+      },
+      BlackListClick(){
+        this.$router.push('/blacklist')
+      },
+      InfraCommandClick(){
+        this.$router.push('/infracommand')
+      },
+      InfraViewClick(){
+        this.$router.push('/infraview')
+      },
+      LoginClick(){
+        this.$router.push('/login')
+      }
+    }
 }
 </script>
 <style lang="scss">
-
+.navbar-brand.padding-remove{
+  padding: 0;
+  margin-right: 0.2rem;
+}
 </style>
