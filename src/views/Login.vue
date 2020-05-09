@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <b-card no-body class=" mx-auto vertical-center align-middle overflow-hidden" style="max-width: 540px;" >
+        <b-card no-body class="mx-auto vertical-center align-middle overflow-hidden" style="max-width: 540px;" >
             <b-row >
                 <b-col md="6">
                     <b-card-img src="https://img.freepik.com/vecteurs-libre/caricature-profil-homme-affaires_18591-58479.jpg?size=338&ext=jpg" alt="Image" class="rounded-0"></b-card-img>
@@ -37,6 +37,7 @@
         </b-card>
     </div>
 </template>
+
 <script>
 export default {
     name : 'Login',
@@ -57,6 +58,7 @@ export default {
     }
 }
 </script>
+
 <style lang="scss">
     .login{
         height: calc(100% - 40px);

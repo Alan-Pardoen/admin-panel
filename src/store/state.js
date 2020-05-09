@@ -4,11 +4,25 @@ export default {
       test: 'je suis un test',
       connect:true,
       blacklist: [
-        "10000025",
-        "10000026",
-        "10000027",
-        "10000028",
-        "10000029"
+        { ip: 1000025, date: '06/05/18', goal: 'DDOS' },
+        { ip: 1000025, date: '09/03/18', goal: 'DDOS' },
+        { ip: 1000025, date: '07/02/18', goal: 'DDOS' },
+         { ip: 1000025, date: '06/05/18', goal: 'DDOS' },
+        { ip: 1000025, date: '09/03/18', goal: 'DDOS' },
+        { ip: 1000025, date: '07/02/18', goal: 'DDOS' },
+         { ip: 1000025, date: '06/05/18', goal: 'DDOS' },
+        { ip: 1000025, date: '09/03/18', goal: 'DDOS' },
+        { ip: 1000025, date: '07/02/18', goal: 'DDOS' },
+         { ip: 1000025, date: '06/05/18', goal: 'DDOS' },
+        { ip: 1000025, date: '09/03/18', goal: 'DDOS' },
+        { ip: 1000025, date: '07/02/18', goal: 'DDOS' },
+         { ip: 1000025, date: '06/05/18', goal: 'DDOS' },
+        { ip: 1000025, date: '09/03/18', goal: 'DDOS' },
+        { ip: 1000025, date: '07/02/18', goal: 'DDOS' },
+         { ip: 1000025, date: '06/05/18', goal: 'DDOS' },
+        { ip: 1000025, date: '09/03/18', goal: 'DDOS' },
+        { ip: 1000025, date: '07/02/18', goal: 'DDOS' },
+        { ip: 1000025, date: '22/07/18', goal: 'Manual' }
       ]    
     }
   }

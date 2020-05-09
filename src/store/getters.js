@@ -4,5 +4,8 @@ export default {
   },
   GetConnect (state){
     return state.connect
+  },
+  GetBlackList (state){
+    return state.blacklist
   }
 }

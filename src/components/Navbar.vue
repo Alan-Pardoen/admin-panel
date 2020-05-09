@@ -23,15 +23,15 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           
-          <b-nav-item-dropdown right>
+          <b-nav-item-dropdown v-if="GetConnect" right>
             <!-- Using 'button-content' slot -->
-            <template v-slot:button-content>
-              <em>User</em>
+            <template  v-slot:button-content>
+              <em >User</em>
             </template>
-            <b-dropdown-item v-if="!GetConnect" v-on:click="LoginClick">Login</b-dropdown-item>
-            <b-dropdown-item v-if="GetConnect">Profile</b-dropdown-item>
-            <b-dropdown-item v-if="GetConnect">Disconection</b-dropdown-item>
+            <b-dropdown-item >Profile</b-dropdown-item>
+            <b-dropdown-item >Disconection</b-dropdown-item>
           </b-nav-item-dropdown>
+          <b-nav-item v-else v-on:click="LoginClick">Connect</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
