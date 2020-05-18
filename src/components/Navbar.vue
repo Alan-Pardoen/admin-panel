@@ -29,9 +29,9 @@
               <em >User</em>
             </template>
             <b-dropdown-item >Profile</b-dropdown-item>
-            <b-dropdown-item >Disconection</b-dropdown-item>
+            <b-dropdown-item  v-on:click="Disconect" >Disconection</b-dropdown-item>
           </b-nav-item-dropdown>
-          <b-nav-item v-else v-on:click="LoginClick">Connect</b-nav-item>
+          <b-nav-item v-else v-on:click="LoginClick" active>Connect</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -49,6 +49,9 @@ export default {
       },
       BlackListClick(){
         this.$router.push('/blacklist')
+      },
+      Disconect(){
+        this.$store.commit('SetConnect',false)
       },
       InfraCommandClick(){
         this.$router.push('/infracommand')

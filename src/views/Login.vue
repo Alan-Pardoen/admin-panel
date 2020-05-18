@@ -27,7 +27,7 @@
                             <b-col cols="2">
                             </b-col>
                             <b-col cols="10">
-                                <b-button class="login-button"  v-if="LoginButtonActivation" >Login</b-button>
+                                <b-button class="login-button"  v-if="LoginButtonActivation"  v-on:click="Login" >Login</b-button>
                             <b-button class="login-button" v-else disabled >Login</b-button>
                             </b-col>
                         </b-row>
@@ -59,7 +59,7 @@ export default {
     methods:{
         Login(){ 
             var tuple = [this.password, this.name]
-            this.$store.dispatch("",tuple)
+            this.$store.dispatch("Connect",tuple)
             }
     }
 }
