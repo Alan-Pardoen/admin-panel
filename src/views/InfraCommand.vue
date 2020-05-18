@@ -6,7 +6,9 @@
             <div class="shadow red"></div>
         </b-col>
         <b-col  cols="6">
-            <div class="shadow blue"></div>
+            <div class="shadow blue">
+                <Command />
+            </div>
         </b-col>
         </b-row>
         </b-container>
@@ -14,8 +16,12 @@
 </template>
 
 <script>
+import Command from '../components/Command'
 export default {
-    name : 'InfraCommand'
+    name : 'InfraCommand',
+    components: {
+        Command
+    },
 }
 </script>
 

@@ -55,6 +55,12 @@ export default {
                 return false
             }
         }
+    },
+    methods:{
+        Login(){ 
+            var tuple = [this.password, this.name]
+            this.$store.dispatch("",tuple)
+            }
     }
 }
 </script>
